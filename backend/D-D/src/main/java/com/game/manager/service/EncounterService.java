@@ -29,6 +29,11 @@ public class EncounterService {
         return encounterRepository.findAll();
     }
 
+    public List<Participant> getEncountersParticipants(Long id) {
+        Encounter encounter = encounterRepository.getById(id);
+        return encounter.getParticipants();
+    }
+
     public void addEncounter(Encounter encounter) {
         encounterRepository.save(encounter);
     }
@@ -41,8 +46,7 @@ public class EncounterService {
         encounterRepository.save(encounter);
     }
 
-    public List<Participant> getEncountersParticipants(Long id) {
-        Encounter encounter = encounterRepository.getById(id);
-        return encounter.getParticipants();
+    public void deleteEncounter(long id) {
+        encounterRepository.deleteById(id);
     }
 }

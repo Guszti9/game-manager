@@ -43,4 +43,9 @@ public class EncounterController {
     public void addParticipant(@PathVariable Long id, @RequestBody Participant participant) {
         encounterService.addParticipant(id, participant);
     }
+
+    @DeleteMapping("api/encounter/{id}")
+    public void deleteEncounter(@PathVariable Long id) {
+        encounterService.deleteEncounter(id);
+    }
 }

@@ -14,7 +14,7 @@ public class Encounter {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Long id;
-    @OneToMany(mappedBy="encounter")
+    @OneToMany(mappedBy="encounter", cascade = CascadeType.ALL)
     private List<Participant> participants = new ArrayList<>();
     private String name;
 
