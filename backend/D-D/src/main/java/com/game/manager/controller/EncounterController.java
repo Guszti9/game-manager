@@ -13,17 +13,20 @@ import java.util.List;
 @RestController
 public class EncounterController {
     private final EncounterService encounterService;
-    private final ParticipantService participantService;
 
     @Autowired
-    public EncounterController(EncounterService encounterService, ParticipantService participantService) {
+    public EncounterController(EncounterService encounterService) {
         this.encounterService = encounterService;
-        this.participantService = participantService;
     }
 
     @GetMapping("api/encounter/{id}")
-    public Encounter getEncounterById(@PathVariable int id){
+    public Encounter getEncounterById(@PathVariable Long id){
         return encounterService.getEncounterById(id);
+    }
+
+    @GetMapping("api/encounter/{id}/participant/all")
+    public List<Participant> getEncountersParticipants(@PathVariable Long id){
+        return encounterService.getEncountersParticipants(id);
     }
 
     @GetMapping("api/encounter/all")
@@ -31,11 +34,13 @@ public class EncounterController {
         return encounterService.getAllEncounter();
     }
 
-    @PostMapping("api/encounter/{id}")
-    public void addEncounter(@PathVariable int id) {
-        encounterService.addEncounter(id);
+    @PostMapping("api/encounter")
+    public void addEncounter(@RequestBody Encounter encounter) {
+        encounterService.addEncounter(encounter);
     }
 
-    @PutMapping("api/encounter/{id}")
-    public
+    @PostMapping("api/encounter/{id}/participant")
+    public void addParticipant(@PathVariable Long id, @RequestBody Participant participant) {
+        encounterService.addParticipant(id, participant);
+    }
 }
