@@ -1,5 +1,6 @@
 import {useEffect, useState} from "react";
 import {dataHandler} from "../data/dataHandler";
+import "./css/encounter.css"
 import ParticipantContainer from "./ParticipantContainer";
 
 function Encounter(props) {

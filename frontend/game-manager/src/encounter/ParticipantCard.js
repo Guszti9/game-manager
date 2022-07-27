@@ -1,10 +1,12 @@
 import {useEffect, useState} from "react";
+import HealthBar from "./HealthBar";
 
 function ParticipantCard(props) {
     const [participant, setParticipant] = useState(null);
 
     useEffect(() => {
         setParticipant(props.data);
+        console.log(participant);
     }, [props]);
 
 
@@ -18,6 +20,7 @@ function ParticipantCard(props) {
                     {participant?.init}
                 </div>
 
+                <HealthBar maxHp={participant?.maxHp} currentHp={participant?.currentHp}/>
             </div>
         </div>
     );
