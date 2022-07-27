@@ -1,5 +1,6 @@
 import {dataHandler} from "../data/dataHandler";
 import {useState, useEffect} from "react";
+import ParticipantCard from "./ParticipantCard";
 
 function Encounter(props) {
     const [encounter, setEncounter] = useState(null)
@@ -13,9 +14,9 @@ function Encounter(props) {
           {encounter?.name}
           {encounter?.participants.map(participant => {
               return (
-                  <div key={participant.id}>
+                  <ParticipantCard data={participant} key={participant.id}>
                       {participant.name}
-                  </div>
+                  </ParticipantCard>
               )
 
           })}
