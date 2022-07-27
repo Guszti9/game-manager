@@ -1,6 +1,6 @@
+import {useEffect, useState} from "react";
 import {dataHandler} from "../data/dataHandler";
-import {useState, useEffect} from "react";
-import ParticipantCard from "./ParticipantCard";
+import ParticipantContainer from "./ParticipantContainer";
 
 function Encounter(props) {
     const [encounter, setEncounter] = useState(null)
@@ -10,18 +10,17 @@ function Encounter(props) {
     }, [props]);
 
     return (
-      <div>
-          {encounter?.name}
-          {encounter?.participants.map(participant => {
-              return (
-                  <ParticipantCard data={participant} key={participant.id}>
-                      {participant.name}
-                  </ParticipantCard>
-              )
+        <div>
+            <h2>
+                {encounter?.name}
+            </h2>
+            <ParticipantContainer participants = {encounter?.participants}>
 
-          })}
-      </div>
-    );
+            </ParticipantContainer>
+
+
+        </div>
+    )
 }
 
-export default Encounter;
+export default Encounter
