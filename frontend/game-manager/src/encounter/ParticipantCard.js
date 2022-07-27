@@ -11,17 +11,19 @@ function ParticipantCard(props) {
 
 
     return (
-        <div className="card">
-            <div className="cardBody">
+        <div className="participant-card">
+            <div className="participant-data">
                 <div>
-                    {participant?.name}
+                    <b>{participant?.name}</b>
                 </div>
                 <div>
-                    {participant?.init}
+                    <b>INIT:</b> {participant?.init}
                 </div>
-
-                <HealthBar maxHp={participant?.maxHp} currentHp={participant?.currentHp}/>
+                <div>
+                    <b>AC:</b> {participant?.armorClass}
+                </div>
             </div>
+            <HealthBar maxHp={participant?.maxHp} currentHp={participant?.currentHp}/>
         </div>
     );
 }

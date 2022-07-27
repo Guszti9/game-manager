@@ -11,7 +11,7 @@ function Encounter(props) {
     }, [props]);
 
     return (
-        <div>
+        <div className="encounter">
             <h2>
                 {encounter?.name}
             </h2>

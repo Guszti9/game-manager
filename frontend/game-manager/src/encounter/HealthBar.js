@@ -13,7 +13,7 @@ function HealthBar(props) {
 
     return (
         <div className="health-bar"
-             style={{backgroundImage: `linear-gradient(to right, red 0% ${percentage}%, transparent ${percentage}% 100%)`}}>
+             style={{backgroundImage: `linear-gradient(to right, #895061 0% ${percentage}%, transparent ${percentage}% 100%)`}}>
             <p className="health-value">{currentHp} / {maxHp}</p>
         </div>
     );
