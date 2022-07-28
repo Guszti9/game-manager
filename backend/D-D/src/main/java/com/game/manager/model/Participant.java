@@ -18,6 +18,9 @@ public class Participant {
     @JsonIgnore
     private Encounter encounter;
 
+    @ManyToOne
+    Creature type;
+
     private String name;
     private int init;
     private int maxHp;
