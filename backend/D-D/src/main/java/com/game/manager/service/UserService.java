@@ -1,11 +1,12 @@
 package com.game.manager.service;
 
-import com.game.manager.model.UserMember;
+import com.game.manager.appuser.AppUser;
 import com.game.manager.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public class UserService {
@@ -16,20 +17,20 @@ public class UserService {
         this.userRepository = userRepository;
     }
 
-    public UserMember getUserById(Long id) {
-        return userRepository.getById(id);
+    public Optional<AppUser> getUserById(Long id) {
+        return userRepository.findById(id);
     }
 
-    public List<UserMember> getAllUsers() {
+    public List<AppUser> getAllUsers() {
         return userRepository.findAll();
     }
 
-    public void addUser(UserMember user) {
+    public void addUser(AppUser user) {
         userRepository.save(user);
     }
 
-    public void editUser(Long id, UserMember updateData) {
-        UserMember user = userRepository.getById(id);
+    public void editUser(Long id, AppUser updateData) {
+        AppUser user = userRepository.getById(id);
         user.editUser(updateData);
         userRepository.save(user);
     }
