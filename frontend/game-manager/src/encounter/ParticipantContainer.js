@@ -12,12 +12,14 @@ function ParticipantContainer(props) {
         <div>
             {participants?.map(participant => {
                 return (
-                    <ParticipantCard data={participant} key={participant.id}>
-
-                    </ParticipantCard>
+                    <ParticipantCard data={participant} key={participant.id}/>
                 )
-
             })}
+            <div className="add-participant-container">
+                <button className="add-participant-button">
+                    Add Participant
+                </button>
+            </div>
         </div>
     );
 }

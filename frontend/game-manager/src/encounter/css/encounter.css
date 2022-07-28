@@ -1,6 +1,8 @@
+/* #2D4159 */
+
 .encounter {
-    color: #59253A;
-    background-color: #78244C;
+    color: #F4E4C1;
+    background-color: #59253A;
     height: 100vh;
 }
 
@@ -11,11 +13,12 @@
 }
 
 .participant-card {
+    color: #2D283E;
     background-color: #0677A1;
-    max-width: 300px;
+    max-width: 400px;
     margin: 15px;
     padding: 10px;
-    border: solid 3px;
+    border: #2D4159 solid 3px;
     border-radius: 5px;
 }
 
@@ -27,4 +30,25 @@
 .health-value {
     text-align: center;
     margin: 0;
+}
+
+.add-participant-container {
+    margin: 0 15px;
+    max-width: 420px;
+    display: flex;
+    justify-content: center;
+}
+
+.add-participant-button {
+    background-color: #0677A1;
+    padding: 5px;
+    font-size: large;
+    font-weight: bold;
+    color: #2D283E;
+    border: #2D4159 solid 3px;
+    border-radius: 5px;
+}
+
+.add-participant-button:hover {
+    cursor: pointer;
 }
