@@ -16,7 +16,7 @@ async function apiGet(url) {
     }
 }
 
-async function apiPost(url, payload) {
+export async function apiPost(url, payload) {
     let response = await fetch(url, {
         method: "POST",
         headers: {

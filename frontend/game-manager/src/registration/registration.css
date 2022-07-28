@@ -1,0 +1,19 @@
+.registration-form{
+    display: grid;
+    place-items: center;
+    padding-top: 200px;
+}
+
+input{
+    display: block;
+    text-align: center;
+}
+
+label{
+    padding-top: 100px;
+}
+
+button{
+    padding: 50px;
+    width: 60%;
+}
