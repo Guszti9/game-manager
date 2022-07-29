@@ -48,10 +48,40 @@ function ParticipantContainer(props) {
                     style={customStyles}
                     contentLabel="Example Modal"
                 >
-                    <h2>Add Participant</h2>
-                    <button onClick={closeModal}>close</button>
-                    <form>
-                    </form>
+                    <div className="modal-header">
+                        <h2>Add Participant</h2>
+                    </div>
+                    <div className="modal-body">
+                        <form>
+
+                            <div className="input-div">
+                                <input type="text" id="input-name" placeholder=" " required/>
+                                <label htmlFor="input-name">Name</label>
+                            </div>
+                            <div>
+                                <div className="input-div">
+                                    <input type="number" id="input-init" placeholder=" " required/>
+                                    <label htmlFor="input-init">Init</label>
+                                </div>
+                                <div className="input-div">
+                                    <input type="number" id="input-health" placeholder=" " required/>
+                                    <label htmlFor="input-health">Health</label>
+                                </div>
+                                <div className="input-div">
+                                    <input type="number" id="input-armor" placeholder=" " required/>
+                                    <label htmlFor="input-armor">Armor</label>
+                                </div>
+                            </div>
+                            <div>
+                                <label htmlFor="description-input">description</label><br/>
+                                <textarea name="description" id="description-input" cols="20" rows="3" required/>
+                            </div>
+                        </form>
+                    </div>
+                    <div className="modal-footer">
+                        <button onClick={closeModal} className="close-modal-button">close</button>
+                        <button
+                    </div>
                 </Modal>
             </div>
         </div>
