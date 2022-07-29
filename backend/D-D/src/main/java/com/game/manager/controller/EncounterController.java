@@ -39,9 +39,12 @@ public class EncounterController {
         encounterService.addEncounter(encounter);
     }
 
-    @PostMapping("api/encounter/{id}/participant")
-    public void addParticipant(@PathVariable Long id, @RequestBody Participant participant) {
-        encounterService.addParticipant(id, participant);
+    @PostMapping("api/encounter/{encId}/creature/{crtId}/participant")
+    public void addParticipant(
+            @PathVariable Long encId,
+            @PathVariable Long crtId,
+            @RequestBody Participant participant) {
+        encounterService.addParticipant(encId, crtId, participant);
     }
 
     @DeleteMapping("api/encounter/{id}")

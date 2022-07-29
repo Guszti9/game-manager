@@ -1,25 +1,29 @@
 import {useEffect, useState} from "react";
-import {dataHandler} from "../data/dataHandler";
+import HealthBar from "./HealthBar";
 
 function ParticipantCard(props) {
     const [participant, setParticipant] = useState(null);
 
     useEffect(() => {
         setParticipant(props.data);
+        console.log(participant);
     }, [props]);
 
 
     return (
-        <div className="card">
-            <div className="cardBody">
+        <div className="participant-card">
+            <div className="participant-data">
                 <div>
-                    {participant?.name}
+                    <b>{participant?.name}</b>
                 </div>
                 <div>
-                    {participant?.init}
+                    <b>INIT:</b> {participant?.init}
                 </div>
-
+                <div>
+                    <b>AC:</b> {participant?.armorClass}
+                </div>
             </div>
+            <HealthBar maxHp={participant?.maxHp} currentHp={participant?.currentHp}/>
         </div>
     );
 }
